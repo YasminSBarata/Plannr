@@ -30,7 +30,7 @@ Este app nasceu da necessidade de ter um controle financeiro que não apenas reg
 ### Pré-requisitos
 
 - Node.js 18+
-- npm ou yarn
+- pnpm 8+
 - Android Studio (para build Android)
 
 ### Instalação
@@ -41,21 +41,21 @@ git clone https://github.com/seu-usuario/app-financas.git
 cd app-financas
 
 # Instale as dependências
-npm install
+pnpm install
 
 # Configure as variáveis de ambiente
 cp .env.example .env
 # Adicione suas credenciais do Supabase no .env
 
 # Rode em modo desenvolvimento
-npm run dev
+pnpm run dev
 ```
 
 ### Build para Mobile
 
 ```bash
 # Build da aplicação
-npm run build
+pnpm run build
 
 # Sincronize com as plataformas mobile
 npx cap sync
@@ -238,8 +238,13 @@ Funciona como template:
 
 ```bash
 # Rodar testes unitários
-npm run test
+pnpm test
 
+# Testes e2e
+pnpm test:e2e
+
+# Coverage
+pnpm test:coverage
 ```
 
 ## 📱 Build e Deploy
@@ -247,7 +252,7 @@ npm run test
 ### Android
 
 ```bash
-npm run build
+pnpm run build
 npx cap sync android
 npx cap open android
 # Gere o APK/AAB pelo Android Studio
