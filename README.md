@@ -80,9 +80,7 @@ npx cap open android
     /Cartoes          # Gerenciamento de meios de pagamento
     /Planejamento     # Reservas e metas
     /Timeline         # Visão dos próximos 6 meses
-  /services           # Lógica de negócio
-    /supabase         # Client e queries do Supabase
-    /calculations     # Cálculos financeiros
+  /lib                # Client e queries do Supabase
   /store              # Estado global (Zustand)
   /utils              # Funções auxiliares
   /hooks              # Custom React hooks
@@ -93,26 +91,31 @@ npx cap open android
 ### Tabelas Principais
 
 **usuarios**
+
 - Autenticação via Supabase Auth
 
 **rendas**
+
 - renda_fixa: decimal
 - renda_extra: decimal (opcional)
 - descricao_extra: texto
 - mes: data
 
 **meios_pagamento**
+
 - nome: texto (ex: "Nubank", "Dinheiro")
 - tipo: texto ("credito", "debito", "pix")
 - limite: decimal (opcional)
 
 **categorias**
+
 - nome: texto
 - icone: texto (emoji)
 - cor: hex
 - tipo: enum ("fixa", "variavel", "reserva")
 
 **gastos**
+
 - descricao: texto
 - valor: decimal
 - categoria_id: fk
@@ -126,13 +129,14 @@ npx cap open android
 - gasto_pai_id: fk (referência ao gasto original)
 
 **reservas**
+
 - categoria_id: fk
 - valor_mensal: decimal
 - mes: data
 
 ## 🎯 Funcionalidades
 
-### MVP (v1.0) 
+### MVP (v1.0)
 
 - [ ] Autenticação (login/cadastro)
 - [ ] Cadastro de renda mensal (fixa + extra)
@@ -144,7 +148,7 @@ npx cap open android
 - [ ] Filtro por cartão
 - [ ] Navegação entre meses
 
-### v1.1  
+### v1.1
 
 - [ ] Gastos parcelados
 - [ ] Gastos recorrentes
@@ -153,7 +157,7 @@ npx cap open android
 - [ ] Timeline de 6 meses futuros
 - [ ] Gráfico de gastos por categoria
 
-### v2.0 
+### v2.0
 
 - [ ] Planejamento de reservas
 - [ ] Notificações push
@@ -162,7 +166,7 @@ npx cap open android
 - [ ] Múltiplas carteiras
 - [ ] Metas por categoria
 
-### v3.0 
+### v3.0
 
 - [ ] Anexar comprovantes (fotos)
 - [ ] Integração Open Finance
@@ -176,11 +180,13 @@ npx cap open android
 ### Paleta de Cores (Indigo Minimalista)
 
 **Primárias**
+
 - Indigo Principal: `#6366F1`
 - Indigo Escuro: `#4F46E5`
 - Indigo Claro: `#818CF8`
 
 **Neutrals**
+
 - Preto: `#171717`
 - Cinza Escuro: `#404040`
 - Cinza Médio: `#A3A3A3`
@@ -188,6 +194,7 @@ npx cap open android
 - Branco: `#FFFFFF`
 
 **Status**
+
 - Sucesso (verde): `#10B981`
 - Alerta (amarelo): `#F59E0B`
 - Erro (vermelho): `#EF4444`
@@ -222,6 +229,7 @@ Saldo do Mês = (Renda Fixa + Renda Extra) - (Soma de Gastos)
 ### Gastos Parcelados
 
 Ao criar um gasto parcelado (ex: 12x de R$ 100):
+
 1. Cria o gasto principal como "pago" (compra já foi feita)
 2. Cria 12 gastos filhos (um para cada mês)
 3. Cada filho referencia o `gasto_pai_id`
@@ -230,6 +238,7 @@ Ao criar um gasto parcelado (ex: 12x de R$ 100):
 ### Gastos Recorrentes
 
 Funciona como template:
+
 1. Usuário marca gasto como recorrente
 2. Sistema copia automaticamente para os próximos meses
 3. Cada cópia é independente (pode editar sem afetar outras)
@@ -286,8 +295,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👥 Autores
 
-- **Yasmin Dos Santos Barata** - *Desenvolvimento inicial* - [@YasminSBarata](https://github.com/YasminSBarata)
-
+- **Yasmin Dos Santos Barata** - _Desenvolvimento inicial_ - [@YasminSBarata](https://github.com/YasminSBarata)
 
 **Versão atual**: 1.0.0-beta  
 **Última atualização**: Janeiro 2026
