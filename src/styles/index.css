@@ -1,1 +1,80 @@
-@import 'tailwindcss';
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@theme {
+  /* Cores Primárias - Indigo */
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8; /* Indigo Claro */
+  --color-primary-500: #6366f1; /* Indigo Principal */
+  --color-primary-600: #4f46e5; /* Indigo Escuro */
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+
+  /* Neutrals */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5; /* Cinza Claro */
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3; /* Cinza Médio */
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040; /* Cinza Escuro */
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717; /* Preto */
+  --color-neutral-950: #0a0a0a;
+
+  /* Status - Success (Verde) */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-success-dark: #059669;
+
+  /* Status - Warning (Amarelo) */
+  --color-warning: #f59e0b;
+  --color-warning-light: #fed7aa;
+  --color-warning-dark: #d97706;
+
+  /* Status - Danger (Vermelho) */
+  --color-danger: #ef4444;
+  --color-danger-light: #fecaca;
+  --color-danger-dark: #dc2626;
+
+  /* Cores específicas de finanças */
+  --color-income: #10b981; /* Verde para rendas */
+  --color-expense: #ef4444; /* Vermelho para gastos */
+  --color-pending: #f59e0b; /* Amarelo para pendente */
+  --color-paid: #10b981; /* Verde para pago */
+
+  /* Sombras customizadas */
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+
+  /* Animações */
+  --animate-fade-in: fade-in 0.3s ease-in-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
