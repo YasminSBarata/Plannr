@@ -37,8 +37,7 @@ Este app nasceu da necessidade de ter um controle financeiro que não apenas reg
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/app-financas.git
-cd app-financas
+git clone https://github.com/YasminSBarata/Plannr.git
 
 # Instale as dependências
 pnpm install
