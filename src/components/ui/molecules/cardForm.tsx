@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '../Button.tsx'
+import { Button } from '../Button'
 
 interface CardFormProps {
   email: string
