@@ -22,8 +22,8 @@ export function Login() {
     try {
       await signIn(email, password)
       navigate('/')
-    } catch (err: any) {
-      const errorMessage = err.message || 'Erro ao fazer login'
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Erro ao fazer login'
 
       if (errorMessage.includes('Invalid login credentials')) {
         setError('Email ou senha incorretos')
