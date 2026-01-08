@@ -92,7 +92,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     signOut,
   }
 
-  return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={value}>
+      {loading ? <div>Carregando...</div> : children}
+    </AuthContext.Provider>
+  )
 }
 
 /**

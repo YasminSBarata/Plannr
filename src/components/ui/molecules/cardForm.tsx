@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '../Button'
+import { Button } from '../atoms/Button'
 
 interface CardFormProps {
   email: string
@@ -72,6 +72,7 @@ export function CardForm({
                 type="button"
                 onClick={() => setMostrarSenha(!mostrarSenha)}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-primary-500 transition-colors"
+                aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
               >
                 {mostrarSenha ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
