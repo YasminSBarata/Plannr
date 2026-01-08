@@ -72,6 +72,7 @@ export function CardForm({
                 type="button"
                 onClick={() => setMostrarSenha(!mostrarSenha)}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-primary-500 transition-colors"
+                aria-label={mostrarSenha ? 'Ocultar senha' : 'Mostrar senha'}
               >
                 {mostrarSenha ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
